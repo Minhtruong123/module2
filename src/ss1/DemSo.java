@@ -2,7 +2,7 @@ package ss1;
 
 import java.util.Scanner;
 
-public class Demso {
+public class DemSo {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Nhập vào 1 số: ");

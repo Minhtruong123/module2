@@ -2,7 +2,7 @@ package ss1;
 
 import java.util.Scanner;
 
-public class Chuyendoitiente {
+public class ChuyenDoiTienTe {
     public static void main(String[] args) {
         double usd;
         Scanner sc= new Scanner(System.in);
