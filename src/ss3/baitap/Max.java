@@ -10,7 +10,7 @@ public class Max {
         System.out.println("Nhập độ dài 1 phần tử của mảng 2 chiều: ");
         int n = Integer.parseInt(sc.nextLine());
         int arr[][] = new int[m][n];
-        int max = 0;
+        int max = arr[0][0];
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 System.out.println("Nhập phần tử arr[" + i + "][" + j + "]");

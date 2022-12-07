@@ -8,7 +8,7 @@ public class Min {
         System.out.println("Nhập số lượng phần tử: ");
         int length1 = Integer.parseInt(sc.nextLine());
         int arr[] = new int[length1];
-        int min = 0;
+        int min = arr[0];
         for (int i = 0; i < length1; i++) {
             System.out.println("Nhập phần tử thứ " + i);
             arr[i] = Integer.parseInt(sc.nextLine());
