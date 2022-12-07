@@ -3,7 +3,7 @@ package ss4.baitap;
 import java.util.Scanner;
 
 public class QuadraticEquation {
-    double a,b,c;
+    private double a,b,c;
 
     public QuadraticEquation(double a, double b, double c){
         this.a=a;
