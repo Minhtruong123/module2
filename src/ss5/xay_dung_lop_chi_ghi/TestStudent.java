@@ -1,6 +1,4 @@
-package ss5.XayDungLopChiGhi;
-
-import java.util.Date;
+package ss5.xay_dung_lop_chi_ghi;
 
 public class TestStudent {
     public static void main(String[] args) {

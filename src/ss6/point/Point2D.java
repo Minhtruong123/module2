@@ -1,6 +1,7 @@
 package ss6.point;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Point2D {
     private float x;
@@ -39,6 +40,7 @@ public class Point2D {
         float arr[] = {this.x, this.y};
         return arr;
     }
+
 
     @Override
     public String toString() {

@@ -1,4 +1,4 @@
-package ss5.XayDungLopChiGhi;
+package ss5.xay_dung_lop_chi_ghi;
 
 public class Student {
     private String name = "John";
