@@ -1,9 +1,9 @@
 package ss4.baitap;
 
 public class FanDesign {
-    static final int slow = 1;
-    static final int medium = 2;
-    static final int fast = 3;
+    static final int SLOW = 1;
+    static final int MEDIUM = 2;
+    static final int FAST = 3;
     private int speed = 1;
     private boolean on = false;
     private double radius = 5;
@@ -52,14 +52,14 @@ public class FanDesign {
 
     public static void main(String[] args) {
         FanDesign fan1 = new FanDesign();
-        fan1.setSpeed(fast);
+        fan1.setSpeed(FAST);
         fan1.setColor("Yellow");
         fan1.setRadius(10);
         fan1.setOn(true);
         System.out.println(fan1.toString());
 
         FanDesign fan2 = new FanDesign();
-        fan2.setSpeed(medium);
+        fan2.setSpeed(MEDIUM);
         fan2.setColor("Blue");
         fan2.setRadius(5);
         fan2.setOn(false);
