@@ -2,7 +2,7 @@ package ss6.point;
 
 import java.util.Arrays;
 
-public class Point3D extends Point2D{
+public class Point3D extends Point2D {
     private float z;
 
     public Point3D() {
@@ -21,19 +21,20 @@ public class Point3D extends Point2D{
         this.z = z;
     }
 
-    public void setXYZ(float x, float y, float z){
-        super.setXY(x,y);
-        this.z=z;
+    public void setXYZ(float x, float y, float z) {
+        super.setXY(x, y);
+        this.z = z;
     }
-    public float[] getXYZ(){
-        float arr[]= {super.getX(),super.getY(),this.z};
+
+    public float[] getXYZ() {
+        float arr[] = {super.getX(), super.getY(), this.z};
         return arr;
     }
 
     @Override
     public String toString() {
-        return "Point3D{x= " + getX()+ ", y= "+getY()+
+        return "Point3D{x= " + getX() + ", y= " + getY() +
                 ", z= " + z +
-                ", getXYZ= "+Arrays.toString(getXYZ())+"}";
+                ", getXYZ= " + Arrays.toString(getXYZ()) + "}";
     }
 }
