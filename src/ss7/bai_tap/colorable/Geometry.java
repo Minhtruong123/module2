@@ -1,6 +1,6 @@
 package ss7.bai_tap.colorable;
 
-public class Geometry implements ColorableInterface {
+public abstract class Geometry{
     private String color;
     private boolean filled;
 
@@ -31,10 +31,5 @@ public class Geometry implements ColorableInterface {
                 "color='" + color + '\'' +
                 ", filled=" + filled +
                 '}';
-    }
-
-    @Override
-    public void howToColor() {
-
     }
 }

@@ -30,16 +30,16 @@ public class Rectangle extends Geometry implements ColorableInterface {
     }
 
     @Override
-    public void howToColor() {
+    public String howToColor() {
         if (super.isFilled()) {
-            System.out.println("Color " + super.getColor() + " all four sides");
+            return "Color " + super.getColor() + " all four sides";
         } else {
-            System.out.println("No color");
+            return "No color";
         }
     }
 
     @Override
     public String toString() {
-        return "Area of this rectangle is: " + this.getArea();
+        return "Area of this rectangle is: " + this.getArea() + "."+this.howToColor();
     }
 }

@@ -7,15 +7,13 @@ public class Test {
         geometries[1] = new Square("red", false, 4);
         geometries[2] = new Rectangle("yellow", true, 4, 5);
 
-        geometries[0].howToColor();
+
         System.out.println(geometries[0]);
         System.out.println();
 
-        geometries[1].howToColor();
         System.out.println(geometries[1]);
         System.out.println();
 
-        geometries[2].howToColor();
         System.out.println(geometries[2]);
     }
 }

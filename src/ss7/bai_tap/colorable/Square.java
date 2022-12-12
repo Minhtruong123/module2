@@ -20,18 +20,17 @@ public class Square extends Geometry implements ColorableInterface {
         return this.side * this.side;
     }
 
-
     @Override
     public String toString() {
-        return "Area of this square: " + this.getArea();
+        return "Area of this square: " + this.getArea() + ". "+this.howToColor();
     }
 
     @Override
-    public void howToColor() {
+    public String howToColor() {
         if (super.isFilled()) {
-            System.out.println("Color " + super.getColor() + " all four sides");
+            return "Color " + super.getColor() + " all four sides";
         } else {
-            System.out.println("No color");
+            return "No color";
         }
     }
 }
