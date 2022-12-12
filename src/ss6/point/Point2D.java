@@ -47,6 +47,6 @@ public class Point2D {
         return "Point2D{" +
                 "x=" + x +
                 ", y=" + y +
-                ", getXY= " + Arrays.toString(getXY()) + "}";
+                ", x,y= " + Arrays.toString(getXY()) + "}";
     }
 }
