@@ -1,6 +1,6 @@
 package ss7.bai_tap.colorable;
 
-public abstract class Geometry{
+public abstract class Geometry {
     private String color;
     private boolean filled;
 

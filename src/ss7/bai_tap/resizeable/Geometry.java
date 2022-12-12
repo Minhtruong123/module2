@@ -1,6 +1,6 @@
 package ss7.bai_tap.resizeable;
 
-public class Geometry {
+public abstract class Geometry {
     private boolean filled;
 
     public Geometry(boolean filled) {
