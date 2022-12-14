@@ -1,7 +1,7 @@
 package ss10;
 
 public class TestMyArrayList {
-    public static class Student{
+    public static class Student {
         private int id;
         private String name;
 
@@ -31,11 +31,11 @@ public class TestMyArrayList {
     }
 
     public static void main(String[] args) {
-        Student a= new Student(1,"Truong");
-        Student b= new Student(2,"Trang");
-        Student c= new Student(3,"Nhu");
-        Student d= new Student(4,"Quan");
-        Student e= new Student(5,"Tu");
+        Student a = new Student(1, "Truong");
+        Student b = new Student(2, "Trang");
+        Student c = new Student(3, "Nhu");
+        Student d = new Student(4, "Quan");
+        Student e = new Student(5, "Tu");
 
         MyList<Student> studentMyList = new MyList<>();
         MyList<Student> newStudentList = new MyList<>();
@@ -46,8 +46,8 @@ public class TestMyArrayList {
         studentMyList.add(d);
         studentMyList.add(e);
 
-        for (int i=0;i< studentMyList.size();i++){
-            Student student=(Student) studentMyList.elements[i];
+        for (int i = 0; i < studentMyList.size(); i++) {
+            Student student = (Student) studentMyList.elements[i];
             System.out.println(student.getId());
             System.out.println(student.getName());
         }
@@ -57,7 +57,7 @@ public class TestMyArrayList {
 //        System.out.println(studentMyList.indexOf(c));
 //        System.out.println(studentMyList.contains(c));
         newStudentList = studentMyList.clone();
-        for (int i=0;i<newStudentList.size();i++){
+        for (int i = 0; i < newStudentList.size(); i++) {
             System.out.println(newStudentList.get(i).getName());
         }
     }
