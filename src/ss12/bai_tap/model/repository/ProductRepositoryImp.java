@@ -1,12 +1,25 @@
-package ss12.bai_tap;
+package ss12.bai_tap.model.repository;
+
+import ss12.bai_tap.model.model.Product;
+import ss12.bai_tap.model.service.IProductManager;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class ProductManager extends Product {
+public class ProductRepositoryImp implements IProductRepository {
     List<Product> productList = new ArrayList<>();
+    Product product1 = new Product(1, "LV", 1000);
+    Product product2 = new Product(2, "Gucci", 2000);
+    Product product3 = new Product(3, "Channel", 3000);
+
+    {
+        productList.add(product1);
+        productList.add(product2);
+        productList.add(product3);
+    }
+
 
     public void menu() {
         System.out.println("Chọn phương thức bạn muốn: \n" +
@@ -49,4 +62,5 @@ public class ProductManager extends Product {
             }
         });
     }
+
 }

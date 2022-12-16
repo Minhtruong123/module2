@@ -1,4 +1,4 @@
-package ss12.bai_tap;
+package ss12.bai_tap.model.model;
 
 public class Product {
     private int id;

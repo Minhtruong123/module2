@@ -1,11 +1,15 @@
-package ss12.bai_tap;
+package ss12.bai_tap.controller;
+
+import ss12.bai_tap.model.model.Product;
+import ss12.bai_tap.model.repository.ProductRepositoryImp;
+import ss12.bai_tap.model.service.ProductManagerImp;
 
 import java.util.Scanner;
 
-public class Main {
+public class StudentController {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        ProductManager productManager = new ProductManager();
+        ProductManagerImp productManager = new ProductManagerImp();
         int choice;
         do {
             productManager.menu();
