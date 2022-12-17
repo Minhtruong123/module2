@@ -6,7 +6,7 @@ import ss12.bai_tap.model.service.ProductManagerImp;
 
 import java.util.Scanner;
 
-public class StudentController {
+public class ProductController {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         ProductManagerImp productManager = new ProductManagerImp();
@@ -51,7 +51,11 @@ public class StudentController {
                 case 5:
                     productManager.sort();
                     break;
+                case 6:
+                    System.out.println("Nhập sản phẩm cần xóa: ");
+                    int index6=Integer.parseInt(sc.nextLine());
+                    productManager.xoa(index6);
             }
-        } while (choice < 6);
+        } while (choice < 7);
     }
 }

@@ -7,6 +7,8 @@ public interface IProductManager {
 
     void them(Product product);
 
+    void xoa(int index);
+
     void change(int index, Product product);
 
     void display();

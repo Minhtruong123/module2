@@ -1,7 +1,6 @@
 package ss12.bai_tap.model.repository;
 
 import ss12.bai_tap.model.model.Product;
-import ss12.bai_tap.model.service.IProductManager;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -28,11 +27,16 @@ public class ProductRepositoryImp implements IProductRepository {
                 "3.Hiển thị sản phẩm.\n" +
                 "4.Tìm kiếm sản phẩm.\n" +
                 "5.Sắp xếp sản phẩm.\n" +
-                "6.Thoát.\n");
+                "6.Xóa sản phẩm.\n" +
+                "7.Thoát.\n");
     }
 
     public void them(Product product) {
         productList.add(product);
+    }
+
+    public void xoa(int index){
+        productList.remove(index);
     }
 
     public void change(int index, Product product) {

@@ -20,8 +20,13 @@ public class ProductManagerImp extends Product implements IProductManager {
     }
 
     @Override
+    public void xoa(int index) {
+        repository.xoa(index);
+    }
+
+    @Override
     public void change(int index, Product product) {
-        repository.change(index,product);
+        repository.change(index, product);
     }
 
     @Override
