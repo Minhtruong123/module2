@@ -30,7 +30,7 @@ public class Product {
         this.nameProduct = nameProduct;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 

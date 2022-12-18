@@ -8,7 +8,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class ProductRepositoryImp implements IProductRepository {
-    List<Product> productList = new ArrayList<>();
+    static List<Product> productList = new ArrayList<>();
     Product product1 = new Product(1, "LV", 1000);
     Product product2 = new Product(2, "Gucci", 2000);
     Product product3 = new Product(3, "Channel", 3000);
@@ -62,7 +62,7 @@ public class ProductRepositoryImp implements IProductRepository {
         Collections.sort(productList, new Comparator<Product>() {
             @Override
             public int compare(Product o1, Product o2) {
-                return o1.getId() - o2.getId();
+                return o1.getPrice() - o2.getPrice();
             }
         });
     }
