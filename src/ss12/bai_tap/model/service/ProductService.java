@@ -4,7 +4,7 @@ import ss12.bai_tap.model.model.Product;
 import ss12.bai_tap.model.repository.IProductRepository;
 import ss12.bai_tap.model.repository.ProductRepository;
 
-public class ProductManager extends Product implements IProductManager {
+public class ProductService extends Product implements IProductService {
 
     private IProductRepository repository = new ProductRepository();
 

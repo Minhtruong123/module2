@@ -2,7 +2,7 @@ package ss12.bai_tap.model.service;
 
 import ss12.bai_tap.model.model.Product;
 
-public interface IProductManager {
+public interface IProductService {
     void menu();
 
     void them(Product product);
