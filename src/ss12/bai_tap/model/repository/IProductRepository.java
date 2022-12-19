@@ -9,7 +9,11 @@ public interface IProductRepository {
 
     void xoa(int index);
 
-    void change(int index, Product product);
+    Product findProduct(int id);
+
+    void findByKeyWord(String str);
+
+    void change(Product product);
 
     void display();
 

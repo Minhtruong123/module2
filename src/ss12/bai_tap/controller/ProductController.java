@@ -26,17 +26,18 @@ public class ProductController {
                     productManager.them(product);
                     break;
                 case 2:
-                    System.out.println("Nhập sản phẩm bạn muốn đổi: ");
+                    System.out.println("Nhập id sản phẩm bạn muốn đổi: ");
                     System.out.println("Id: ");
                     int id2 = Integer.parseInt(sc.nextLine());
-                    System.out.println("Tên sản phẩm: ");
-                    String nameProduct2 = sc.nextLine();
-                    System.out.println("Giá tiền: ");
-                    int price2 = Integer.parseInt(sc.nextLine());
-                    System.out.println("Vị trí muốn đổi: ");
-                    int index = Integer.parseInt(sc.nextLine());
-                    Product product2 = new Product(id2, nameProduct2, price2);
-                    productManager.change(index, product2);
+                    Product product2 = productManager.findProduct(id2);
+                    if (product2 != null) {
+                        System.out.println("Tên sản phẩm: ");
+                        String nameProduct2 = sc.nextLine();
+                        System.out.println("Giá tiền: ");
+                        int price2 = Integer.parseInt(sc.nextLine());
+                        Product product1 = new Product(id2, nameProduct2, price2);
+                        productManager.change(product1);
+                    } else System.out.println("Không có id cần tìm");
                     break;
                 case 3:
                     productManager.display();
@@ -51,10 +52,18 @@ public class ProductController {
                     productManager.sort();
                     break;
                 case 6:
-                    System.out.println("Nhập sản phẩm cần xóa: ");
-                    int index6=Integer.parseInt(sc.nextLine());
-                    productManager.xoa(index6);
+                    System.out.println("Nhập id sản phẩm cần xóa: ");
+                    int id6 = Integer.parseInt(sc.nextLine());
+                    Product product6 = productManager.findProduct(id6);
+                    if (product6 != null) {
+                        productManager.xoa(id6);
+                    } else System.out.println("Không có id sản phẩm cần xóa");
+                    break;
+                case 7:
+                    System.out.println("Nhập chuỗi: ");
+                    String str = sc.nextLine();
+                    productManager.findByKeyWord(str);
             }
-        } while (choice < 7);
+        } while (choice < 8);
     }
 }

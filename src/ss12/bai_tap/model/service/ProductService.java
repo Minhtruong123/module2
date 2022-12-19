@@ -25,8 +25,18 @@ public class ProductService extends Product implements IProductService {
     }
 
     @Override
-    public void change(int index, Product product) {
-        repository.change(index, product);
+    public Product findProduct(int id) {
+        return repository.findProduct(id);
+    }
+
+    @Override
+    public void findByKeyWord(String str) {
+        repository.findByKeyWord(str);
+    }
+
+    @Override
+    public void change(Product product) {
+        repository.change(product);
     }
 
     @Override
