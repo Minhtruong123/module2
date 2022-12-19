@@ -2,11 +2,11 @@ package ss12.bai_tap.model.service;
 
 import ss12.bai_tap.model.model.Product;
 import ss12.bai_tap.model.repository.IProductRepository;
-import ss12.bai_tap.model.repository.ProductRepositoryImpl;
+import ss12.bai_tap.model.repository.ProductRepository;
 
-public class ProductManagerImpl extends Product implements IProductManager {
+public class ProductManager extends Product implements IProductManager {
 
-    private IProductRepository repository = new ProductRepositoryImpl();
+    private IProductRepository repository = new ProductRepository();
 
 
     @Override

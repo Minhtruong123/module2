@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class ProductRepositoryImpl implements IProductRepository {
+public class ProductRepository implements IProductRepository {
     static List<Product> productList = new ArrayList<>();
     static {
         productList.add(new Product(1, "LV", 1000));

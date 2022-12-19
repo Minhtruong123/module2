@@ -1,14 +1,14 @@
 package ss12.bai_tap.controller;
 
 import ss12.bai_tap.model.model.Product;
-import ss12.bai_tap.model.service.ProductManagerImpl;
+import ss12.bai_tap.model.service.ProductManager;
 
 import java.util.Scanner;
 
 public class ProductController {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        ProductManagerImpl productManager = new ProductManagerImpl();
+        ProductManager productManager = new ProductManager();
         int choice;
         do {
             productManager.menu();
