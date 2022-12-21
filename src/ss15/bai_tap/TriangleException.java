@@ -5,19 +5,23 @@ import java.util.Scanner;
 public class TriangleException {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-        TriangleException triangleException = new TriangleException();
-        System.out.println("Nhập cạnh a: ");
-        double a = Integer.parseInt(sc.nextLine());
-        System.out.println("Nhập cạnh b: ");
-        double b = Integer.parseInt(sc.nextLine());
-        System.out.println("Nhập cạnh c: ");
-        double c = Integer.parseInt(sc.nextLine());
-        try {
-            triangleException.checkTriangleException(a, b, c);
-        } catch (IllegalTriangleException ex) {
-            System.out.println(ex.getMessage());
-        }
+        boolean check = false;
+        do {
+            TriangleException triangleException = new TriangleException();
+            System.out.println("Nhập cạnh a: ");
+            double a = Integer.parseInt(sc.nextLine());
+            System.out.println("Nhập cạnh b: ");
+            double b = Integer.parseInt(sc.nextLine());
+            System.out.println("Nhập cạnh c: ");
+            double c = Integer.parseInt(sc.nextLine());
+            try {
+                check = false;
+                triangleException.checkTriangleException(a, b, c);
+            } catch (IllegalTriangleException e) {
+                System.out.println(e.getMessage());
+                check = true;
+            }
+        } while (check);
     }
 
     public void checkTriangleException(double a, double b, double c) throws IllegalTriangleException {
