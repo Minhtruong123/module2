@@ -1,24 +1,31 @@
 package ss15.bai_tap;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class TriangleException {
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
         boolean check = false;
+        TriangleException triangleException = new TriangleException();
         do {
-            TriangleException triangleException = new TriangleException();
-            System.out.println("Nhập cạnh a: ");
-            double a = Integer.parseInt(sc.nextLine());
-            System.out.println("Nhập cạnh b: ");
-            double b = Integer.parseInt(sc.nextLine());
-            System.out.println("Nhập cạnh c: ");
-            double c = Integer.parseInt(sc.nextLine());
             try {
-                check = false;
-                triangleException.checkTriangleException(a, b, c);
-            } catch (IllegalTriangleException e) {
-                System.out.println(e.getMessage());
+                System.out.println("Nhập cạnh a: ");
+                double a = Integer.parseInt(sc.nextLine());
+                System.out.println("Nhập cạnh b: ");
+                double b = Integer.parseInt(sc.nextLine());
+                System.out.println("Nhập cạnh c: ");
+                double c = Integer.parseInt(sc.nextLine());
+                try {
+                    check = false;
+                    triangleException.checkTriangleException(a, b, c);
+                } catch (IllegalTriangleException e) {
+                    System.out.println(e.getMessage());
+                    check = true;
+                }
+            } catch (Exception e){
+                System.out.println("Lỗi nhập sai");
                 check = true;
             }
         } while (check);
@@ -32,5 +39,6 @@ public class TriangleException {
         } else {
             System.out.println("Cạnh tam giác hợp lệ");
         }
+
     }
 }
