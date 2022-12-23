@@ -1,4 +1,4 @@
-package ss17.bai_tap;
+package ss17.bai_tap.model;
 
 import java.io.Serializable;
 
