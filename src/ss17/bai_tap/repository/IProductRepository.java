@@ -8,4 +8,5 @@ public interface IProductRepository {
     void display();
 
     void find(String name);
+
 }

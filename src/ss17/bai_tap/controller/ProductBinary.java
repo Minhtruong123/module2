@@ -62,7 +62,5 @@ public class ProductBinary {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
 }
