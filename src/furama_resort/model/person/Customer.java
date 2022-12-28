@@ -2,7 +2,7 @@ package furama_resort.model.person;
 
 public class Customer extends Person{
     private boolean gender;
-    private int identityCard;
+    private String identityCard;
     private String email;
     private String type;
     private String address;
@@ -10,7 +10,7 @@ public class Customer extends Person{
     public Customer() {
     }
 
-    public Customer(boolean gender, int identityCard, String email, String type, String address) {
+    public Customer(boolean gender, String identityCard, String email, String type, String address) {
         this.gender = gender;
         this.identityCard = identityCard;
         this.email = email;
@@ -18,7 +18,7 @@ public class Customer extends Person{
         this.address = address;
     }
 
-    public Customer(int id, String name, String dateOfBirth, int phoneNumber, boolean gender, int identityCard, String email, String type, String address) {
+    public Customer(int id, String name, String dateOfBirth, String phoneNumber, boolean gender, String identityCard, String email, String type, String address) {
         super(id, name, dateOfBirth, phoneNumber);
         this.gender = gender;
         this.identityCard = identityCard;
@@ -35,11 +35,11 @@ public class Customer extends Person{
         this.gender = gender;
     }
 
-    public int getIdentityCard() {
+    public String getIdentityCard() {
         return identityCard;
     }
 
-    public void setIdentityCard(int identityCard) {
+    public void setIdentityCard(String identityCard) {
         this.identityCard = identityCard;
     }
 
@@ -69,12 +69,12 @@ public class Customer extends Person{
 
     @Override
     public String toString() {
-        return "Customer{" +
+        return "Customer{" + super.toString() +
                 "gender=" + gender +
-                ", identityCard=" + identityCard +
+                ", identityCard='" + identityCard + '\'' +
                 ", email='" + email + '\'' +
                 ", type='" + type + '\'' +
                 ", address='" + address + '\'' +
-                '}';
+                "} " ;
     }
 }

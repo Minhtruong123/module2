@@ -4,12 +4,12 @@ public abstract class Person {
     private int id;
     private String name;
     private String dateOfBirth;
-    private int phoneNumber;
+    private String phoneNumber;
 
     public Person() {
     }
 
-    public Person(int id, String name, String dateOfBirth, int phoneNumber) {
+    public Person(int id, String name, String dateOfBirth, String phoneNumber) {
         this.id = id;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
@@ -40,21 +40,19 @@ public abstract class Person {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public int getPhoneNumber() {
+    public String  getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
     @Override
     public String toString() {
-        return "Person{" +
-                "id=" + id +
+        return "id=" + id +
                 ", name='" + name + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
-                ", phoneNumber=" + phoneNumber +
-                '}';
+                ", phoneNumber=" + phoneNumber;
     }
 }
