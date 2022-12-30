@@ -1,21 +1,31 @@
 package furama_resort.model.facility;
 
 public abstract class Facility {
+    private String id;
     private String serviceName;
-    private int usableArea;
-    private int rentalCosts;
-    private int maxNumOfPeople;
+    private String usableArea;
+    private String rentalCosts;
+    private String maxNumOfPeople;
     private String retalType;
 
     public Facility() {
     }
 
-    public Facility(String serviceName, int usableArea, int rentalCosts, int maxNumOfPeople, String retalType) {
+    public Facility(String id, String serviceName, String usableArea, String rentalCosts, String maxNumOfPeople, String retalType) {
+        this.id = id;
         this.serviceName = serviceName;
         this.usableArea = usableArea;
         this.rentalCosts = rentalCosts;
         this.maxNumOfPeople = maxNumOfPeople;
         this.retalType = retalType;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getServiceName() {
@@ -26,27 +36,27 @@ public abstract class Facility {
         this.serviceName = serviceName;
     }
 
-    public int getUsableArea() {
+    public String getUsableArea() {
         return usableArea;
     }
 
-    public void setUsableArea(int usableArea) {
+    public void setUsableArea(String usableArea) {
         this.usableArea = usableArea;
     }
 
-    public int getRentalCosts() {
+    public String getRentalCosts() {
         return rentalCosts;
     }
 
-    public void setRentalCosts(int rentalCosts) {
+    public void setRentalCosts(String rentalCosts) {
         this.rentalCosts = rentalCosts;
     }
 
-    public int getMaxNumOfPeople() {
+    public String getMaxNumOfPeople() {
         return maxNumOfPeople;
     }
 
-    public void setMaxNumOfPeople(int maxNumOfPeople) {
+    public void setMaxNumOfPeople(String maxNumOfPeople) {
         this.maxNumOfPeople = maxNumOfPeople;
     }
 
@@ -61,7 +71,8 @@ public abstract class Facility {
     @Override
     public String toString() {
         return "Facility{" +
-                "serviceName='" + serviceName + '\'' +
+                "id='" + id + '\'' +
+                ", serviceName='" + serviceName + '\'' +
                 ", usableArea=" + usableArea +
                 ", rentalCosts=" + rentalCosts +
                 ", maxNumOfPeople=" + maxNumOfPeople +

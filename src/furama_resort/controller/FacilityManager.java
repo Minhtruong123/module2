@@ -1,5 +1,6 @@
 package furama_resort.controller;
 
+import furama_resort.Regex;
 import furama_resort.model.facility.Facility;
 import furama_resort.model.facility.Room;
 import furama_resort.model.facility.Villa;
@@ -33,42 +34,88 @@ public class FacilityManager {
                     System.out.println("New room or villa (1:Room, 2:Villa)");
                     int numb32 = Integer.parseInt(sc.nextLine());
                     if (numb32 == 1) {
-                        System.out.println("New name service: ");
-                        String nameService32 = sc.nextLine();
-                        System.out.println("Usable are: ");
-                        int usableAre32 = Integer.parseInt(sc.nextLine());
-                        System.out.println("Rental costs");
-                        int rentalCost32 = Integer.parseInt(sc.nextLine());
-                        System.out.println("Max number of people: ");
-                        int maxNumbOfPeople32 = Integer.parseInt(sc.nextLine());
-                        System.out.println("Rental type");
-                        String rentalType = sc.nextLine();
+                        String id32;
+                        do {
+                            System.out.println("Input ID");
+                            id32 = sc.nextLine();
+                        } while (!Regex.checkRegexIDRoom(id32));
+                        String nameService32;
+                        do {
+                            System.out.println("New name service: ");
+                            nameService32 = sc.nextLine();
+                        } while (!Regex.checkRegexNameService(nameService32));
+                        String usableAre32;
+                        do {
+                            System.out.println("Usable are: ");
+                            usableAre32 = sc.nextLine();
+                        } while (!Regex.checkRegexRegexArea(usableAre32));
+                        String rentalCost32;
+                        do {
+                            System.out.println("Rental costs");
+                            rentalCost32 = sc.nextLine();
+                        } while (!Regex.checkRegexRentalCost(rentalCost32));
+                        String maxNumbOfPeople32;
+                        do {
+                            System.out.println("Max number of people: ");
+                            maxNumbOfPeople32 = sc.nextLine();
+                        } while (!Regex.checkRegexMaxPeople(maxNumbOfPeople32));
+                        String rentalType;
+                        do {
+                            System.out.println("Rental type");
+                            rentalType = sc.nextLine();
+                        } while (!Regex.checkRegexRetalType(rentalType));
                         System.out.println("Free service: ");
                         String freeService32 = sc.nextLine();
-                        System.out.println("Number of uses: ");
-                        int numbOfUse32 = Integer.parseInt(sc.nextLine());
-                        Facility room = new Room(nameService32, usableAre32, rentalCost32, maxNumbOfPeople32, rentalType, freeService32);
+                        String numbOfUse32;
+                        do {
+                            System.out.println("Number of uses: ");
+                            numbOfUse32 = sc.nextLine();
+                        } while (!Regex.checkRegexNumbOfUse(numbOfUse32));
+                        Facility room = new Room(id32, nameService32, usableAre32, rentalCost32, maxNumbOfPeople32, rentalType, freeService32);
                         facilityService.add(room, numbOfUse32);
                     } else {
-                        System.out.println("New name service: ");
-                        String nameService32 = sc.nextLine();
-                        System.out.println("Usable are: ");
-                        int usableAre32 = Integer.parseInt(sc.nextLine());
-                        System.out.println("Rental costs");
-                        int rentalCost32 = Integer.parseInt(sc.nextLine());
-                        System.out.println("Max number of people: ");
-                        int maxNumbOfPeople32 = Integer.parseInt(sc.nextLine());
-                        System.out.println("Rental type");
-                        String rentalType = sc.nextLine();
+                        String id32;
+                        do {
+                            System.out.println("Input ID");
+                            id32 = sc.nextLine();
+                        } while (!Regex.checkRegexIDVIlla(id32));
+                        String nameService32;
+                        do {
+                            System.out.println("New name service: ");
+                            nameService32 = sc.nextLine();
+                        } while (!Regex.checkRegexNameService(nameService32));
+                        String usableAre32;
+                        do {
+                            System.out.println("Usable are: ");
+                            usableAre32 = sc.nextLine();
+                        } while (!Regex.checkRegexRegexArea(usableAre32));
+                        String rentalCost32;
+                        do {
+                            System.out.println("Rental costs");
+                            rentalCost32 = sc.nextLine();
+                        } while (!Regex.checkRegexRentalCost(rentalCost32));
+                        String maxNumbOfPeople32;
+                        do {
+                            System.out.println("Max number of people: ");
+                            maxNumbOfPeople32 = sc.nextLine();
+                        } while (!Regex.checkRegexMaxPeople(maxNumbOfPeople32));
+                        String rentalType;
+                        do {
+                            System.out.println("Rental type");
+                            rentalType = sc.nextLine();
+                        } while (!Regex.checkRegexRetalType(rentalType));
                         System.out.println("Room standard: ");
                         String roomStandard32 = sc.nextLine();
                         System.out.println("Pool area: ");
                         int poolArea32 = Integer.parseInt(sc.nextLine());
                         System.out.println("Floors: ");
                         int floors32 = Integer.parseInt(sc.nextLine());
-                        System.out.println("Number of uses: ");
-                        int numbOfUse32 = Integer.parseInt(sc.nextLine());
-                        Facility villa = new Villa(nameService32, usableAre32, rentalCost32, maxNumbOfPeople32, rentalType, roomStandard32, poolArea32, floors32);
+                        String numbOfUse32;
+                        do {
+                            System.out.println("Number of uses: ");
+                            numbOfUse32 = sc.nextLine();
+                        } while (!Regex.checkRegexNumbOfUse(numbOfUse32));
+                        Facility villa = new Villa(id32, nameService32, usableAre32, rentalCost32, maxNumbOfPeople32, rentalType, roomStandard32, poolArea32, floors32);
                         facilityService.add(villa, numbOfUse32);
                     }
                 case 3:

@@ -7,7 +7,6 @@ public interface IFacilityService {
 
     public void displayFacilityMaintenace();
 
-    void add(Facility facility, int numb);
-
+    void add(Facility facility, String numb);
 
 }

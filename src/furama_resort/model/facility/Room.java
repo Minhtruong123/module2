@@ -10,8 +10,8 @@ public class Room extends Facility {
         this.freeService = freeService;
     }
 
-    public Room(String serviceName, int usableArea, int rentalCosts, int maxNumOfPeople, String retalType, String freeService) {
-        super(serviceName, usableArea, rentalCosts, maxNumOfPeople, retalType);
+    public Room(String id, String serviceName, String usableArea, String rentalCosts, String maxNumOfPeople, String retalType, String freeService) {
+        super(id, serviceName, usableArea, rentalCosts, maxNumOfPeople, retalType);
         this.freeService = freeService;
     }
 

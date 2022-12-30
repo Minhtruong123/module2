@@ -9,13 +9,13 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class FacilityService implements IFacilityService {
-    static Map<Facility,Integer> map = new LinkedHashMap();
-    static Map<Facility,Integer> mapMaintenance = new LinkedHashMap<>();
+    static Map<Facility,String> map = new LinkedHashMap();
+    static Map<Facility,String> mapMaintenance = new LinkedHashMap<>();
     static {
-        map.put(new Room("Twin bedroom",100,1000,4,"day","laundry"),2);
-        map.put(new Room("Big bedroom",200,2000,6,"day","laundry"),4);
-        map.put(new Villa("Single villa",200,5000,10,"week","private swimming pool",50,3),2);
-        mapMaintenance.put(new Villa("Single villa",200,5000,10,"week","private swimming pool",50,3),5);
+        map.put(new Room("SVRO-4561","Twin bedroom","100","1000","4","day","laundry"),"2");
+        map.put(new Room("SVRO-4521","Big bedroom","200","2000","6","day","laundry"),"4");
+        map.put(new Villa("SVVL-3661","Single villa","200","5000","10","week","private swimming pool",50,3),"2");
+        mapMaintenance.put(new Villa("SVVL-3251","Single villa","200","5000","10","week","private swimming pool",50,3),"5");
     }
 
     public void displayFacility(){
@@ -32,8 +32,8 @@ public class FacilityService implements IFacilityService {
         }
     }
 
-    public void add(Facility facility, int numb){
-        if (numb<5){
+    public void add(Facility facility, String numb){
+        if (Integer.parseInt(numb)<5){
             map.put(facility,numb);
         }else {
             mapMaintenance.put(facility,numb);
