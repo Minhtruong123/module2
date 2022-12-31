@@ -1,7 +1,7 @@
 package furama_resort.model.person;
 
 public abstract class Person {
-    private int id;
+    private String id;
     private String name;
     private String dateOfBirth;
     private String phoneNumber;
@@ -9,18 +9,18 @@ public abstract class Person {
     public Person() {
     }
 
-    public Person(int id, String name, String dateOfBirth, String phoneNumber) {
+    public Person(String id, String name, String dateOfBirth, String phoneNumber) {
         this.id = id;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.phoneNumber = phoneNumber;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -1,7 +1,7 @@
 package furama_resort.model.person;
 
 public class Employee extends Person {
-    private boolean gender;
+    private String gender;
     private String identityCard;
     private String email;
     private String level;
@@ -11,7 +11,7 @@ public class Employee extends Person {
     public Employee() {
     }
 
-    public Employee(boolean gender, String identityCard, String email, String level, String position, String salary) {
+    public Employee(String gender, String identityCard, String email, String level, String position, String salary) {
         this.gender = gender;
         this.identityCard = identityCard;
         this.email = email;
@@ -20,7 +20,7 @@ public class Employee extends Person {
         this.salary = salary;
     }
 
-    public Employee(int id, String name, String dateOfBirth, String phoneNumber, boolean gender, String identityCard, String email, String level, String position, String salary) {
+    public Employee(String id, String name, String dateOfBirth, String phoneNumber, String gender, String identityCard, String email, String level, String position, String salary) {
         super(id, name, dateOfBirth, phoneNumber);
         this.gender = gender;
         this.identityCard = identityCard;
@@ -30,11 +30,11 @@ public class Employee extends Person {
         this.salary = salary;
     }
 
-    public boolean isGender() {
+    public String isGender() {
         return gender;
     }
 
-    public void setGender(boolean gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 

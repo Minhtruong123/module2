@@ -7,7 +7,7 @@ public interface ICustomerService {
 
     void add(Customer customer);
 
-    Customer findByID(int id);
+    Customer findByID(String id);
 
     void change(Customer customer);
 }

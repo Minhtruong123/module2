@@ -28,21 +28,15 @@ public class EmployeeManager {
                     break;
                 case 2:
                     System.out.println("The ID: ");
-                    int id12 = Integer.parseInt(sc.nextLine());
+                    String id12 = sc.nextLine();
                     System.out.println("Name of the new employee: ");
                     String name12 = sc.nextLine();
                     System.out.println("Date of birth: ");
                     String dateOfBirth12 = sc.nextLine();
                     System.out.println("Phone number: ");
                     String phoneNumber12 = sc.nextLine();
-                    System.out.println("Gender (Man: 1, Women: 0): ");
-                    int numb12 = Integer.parseInt(sc.nextLine());
-                    boolean gender12;
-                    if (numb12 == 1) {
-                        gender12 = true;
-                    } else {
-                        gender12 = false;
-                    }
+                    System.out.println("Gender");
+                    String gender12 = sc.nextLine();
                     System.out.println("Identity card: ");
                     String identity12 = sc.nextLine();
                     System.out.println("Email: ");
@@ -58,7 +52,7 @@ public class EmployeeManager {
                     break;
                 case 3:
                     System.out.println("ID you want to delete: ");
-                    int id13 = Integer.parseInt(sc.nextLine());
+                    String id13 = sc.nextLine();
                     int index13 = employeeService.findID(id13);
                     if (index13 > -1) {
                         employeeService.delete(index13);
@@ -68,10 +62,10 @@ public class EmployeeManager {
                     break;
                 case 4:
                     System.out.println("Input the ID you want to edit: ");
-                    int id14 = Integer.parseInt(sc.nextLine());
+                    String id14 = sc.nextLine();
                     Employee e = employeeService.findEmployee(id14);
                     if (e != null) {
-                        System.out.println("Input number you want to edit: " +
+                        System.out.println("Input number you want to edit: \n" +
                                 "1.Name \n" +
                                 "2.Date of birth \n" +
                                 "3.Phone Number \n" +
@@ -100,14 +94,8 @@ public class EmployeeManager {
                                 employeeService.change(e);
                                 break;
                             case 4:
-                                System.out.println("Gender (Man: 1, Women: 0): ");
-                                int numb14 = Integer.parseInt(sc.nextLine());
-                                boolean gender14;
-                                if (numb14 == 1) {
-                                    gender14 = true;
-                                } else {
-                                    gender14 = false;
-                                }
+                                System.out.println("Gender ");
+                                String gender14 = sc.nextLine();
                                 e.setGender(gender14);
                                 employeeService.change(e);
                                 break;

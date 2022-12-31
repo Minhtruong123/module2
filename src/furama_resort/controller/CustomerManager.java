@@ -27,7 +27,7 @@ public class CustomerManager {
                     break;
                 case 2:
                     System.out.println("ID: ");
-                    int id22 = Integer.parseInt(sc.nextLine());
+                    String id22 = sc.nextLine();
                     System.out.println("Name: ");
                     String name22 = sc.nextLine();
                     System.out.println("Date of birth: ");
@@ -35,13 +35,7 @@ public class CustomerManager {
                     System.out.println("Phone number: ");
                     String phoneNumber22 = sc.nextLine();
                     System.out.println("Gender (Man: 1, Women: 0): ");
-                    int numb22 = Integer.parseInt(sc.nextLine());
-                    boolean gender22;
-                    if (numb22 == 1) {
-                        gender22 = true;
-                    } else {
-                        gender22 = false;
-                    }
+                    String gender22 = sc.nextLine();
                     System.out.println("Indentity card: ");
                     String identity22 = sc.nextLine();
                     System.out.println("Email: ");
@@ -55,7 +49,7 @@ public class CustomerManager {
                     break;
                 case 3:
                     System.out.println("ID of the customer you want to edit: ");
-                    int id23 = Integer.parseInt(sc.nextLine());
+                    String id23 = sc.nextLine();
                     int choose23;
                     Customer customer = customerService.findByID(id23);
                     if (customer != null) {
@@ -89,14 +83,8 @@ public class CustomerManager {
                                 customerService.change(customer);
                                 break;
                             case 4:
-                                System.out.println("Input new gender (Man: 1, Women: 0): ");
-                                int numb23 = Integer.parseInt(sc.nextLine());
-                                boolean gender23;
-                                if (numb23 == 1) {
-                                    gender23 = true;
-                                } else {
-                                    gender23 = false;
-                                }
+                                System.out.println("Input new gender ");
+                                String gender23 = sc.nextLine();
                                 customer.setGender(gender23);
                                 customerService.change(customer);
                                 break;
