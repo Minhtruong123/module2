@@ -2,19 +2,19 @@ package furama_resort.model.facility;
 
 public class Villa extends Facility {
     private String roomStandard;
-    private int poolArea;
-    private int floors;
+    private String poolArea;
+    private String floors;
 
     public Villa() {
     }
 
-    public Villa(String roomStandard, int poolArea, int floors) {
+    public Villa(String roomStandard, String poolArea, String floors) {
         this.roomStandard = roomStandard;
         this.poolArea = poolArea;
         this.floors = floors;
     }
 
-    public Villa(String id, String serviceName, String usableArea, String rentalCosts, String maxNumOfPeople, String retalType, String roomStandard, int poolArea, int floors) {
+    public Villa(String id, String serviceName, String usableArea, String rentalCosts, String maxNumOfPeople, String retalType, String roomStandard, String poolArea, String floors) {
         super(id, serviceName, usableArea, rentalCosts, maxNumOfPeople, retalType);
         this.roomStandard = roomStandard;
         this.poolArea = poolArea;
@@ -29,28 +29,27 @@ public class Villa extends Facility {
         this.roomStandard = roomStandard;
     }
 
-    public int getPoolArea() {
+    public String getPoolArea() {
         return poolArea;
     }
 
-    public void setPoolArea(int poolArea) {
+    public void setPoolArea(String poolArea) {
         this.poolArea = poolArea;
     }
 
-    public int getFloors() {
+    public String getFloors() {
         return floors;
     }
 
-    public void setFloors(int floors) {
+    public void setFloors(String floors) {
         this.floors = floors;
     }
 
     @Override
     public String toString() {
-        return "Villa{" +
-                "roomStandard='" + roomStandard + '\'' +
-                ", poolArea=" + poolArea +
-                ", floors=" + floors +
-                '}';
+        return super.toString() +
+                "," + roomStandard +
+                "," + poolArea +
+                "," + floors;
     }
 }

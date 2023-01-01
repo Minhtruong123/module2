@@ -72,7 +72,7 @@ public class FacilityManager {
                             numbOfUse32 = sc.nextLine();
                         } while (!Regex.checkRegexNumbOfUse(numbOfUse32));
                         Facility room = new Room(id32, nameService32, usableAre32, rentalCost32, maxNumbOfPeople32, rentalType, freeService32);
-                        facilityService.add(room, numbOfUse32);
+                        facilityService.addRoom(room, numbOfUse32);
                     } else {
                         String id32;
                         do {
@@ -107,17 +107,18 @@ public class FacilityManager {
                         System.out.println("Room standard: ");
                         String roomStandard32 = sc.nextLine();
                         System.out.println("Pool area: ");
-                        int poolArea32 = Integer.parseInt(sc.nextLine());
+                        String  poolArea32 = sc.nextLine();
                         System.out.println("Floors: ");
-                        int floors32 = Integer.parseInt(sc.nextLine());
+                        String floors32 = sc.nextLine();
                         String numbOfUse32;
                         do {
                             System.out.println("Number of uses: ");
                             numbOfUse32 = sc.nextLine();
                         } while (!Regex.checkRegexNumbOfUse(numbOfUse32));
-                        Facility villa = new Villa(id32, nameService32, usableAre32, rentalCost32, maxNumbOfPeople32, rentalType, roomStandard32, poolArea32, floors32);
-                        facilityService.add(villa, numbOfUse32);
+                        Villa villa = new Villa(id32, nameService32, usableAre32, rentalCost32, maxNumbOfPeople32, rentalType, roomStandard32, poolArea32, floors32);
+                        facilityService.addVilla(villa, numbOfUse32);
                     }
+                    break;
                 case 3:
                     facilityService.displayFacilityMaintenace();
                     break;

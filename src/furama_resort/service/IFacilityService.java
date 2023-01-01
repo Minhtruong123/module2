@@ -1,12 +1,15 @@
 package furama_resort.service;
 
 import furama_resort.model.facility.Facility;
+import furama_resort.model.facility.Room;
+import furama_resort.model.facility.Villa;
 
 public interface IFacilityService {
     void displayFacility();
 
-    public void displayFacilityMaintenace();
+    void displayFacilityMaintenace();
 
-    void add(Facility facility, String numb);
+    void addRoom(Facility room, String numb);
 
+    void addVilla(Villa villa, String numb);
 }
