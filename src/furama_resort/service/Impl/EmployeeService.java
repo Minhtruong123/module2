@@ -11,7 +11,7 @@ public class EmployeeService implements IEmployeeService {
     @Override
     public void disPlayListEmployee() {
         List<Employee> employeeList = EmployeeRnW.readFile();
-        for (Employee employee:employeeList){
+        for (Employee employee : employeeList) {
             System.out.println(employee);
         }
     }
@@ -26,8 +26,8 @@ public class EmployeeService implements IEmployeeService {
     @Override
     public int findID(String id) {
         List<Employee> employeeList = EmployeeRnW.readFile();
-        for (int i=0;i<employeeList.size();i++){
-            if (employeeList.get(i).getId().equals(id)){
+        for (int i = 0; i < employeeList.size(); i++) {
+            if (employeeList.get(i).getId().equals(id)) {
                 return i;
             }
         }
@@ -37,8 +37,8 @@ public class EmployeeService implements IEmployeeService {
     @Override
     public Employee findEmployee(String id) {
         List<Employee> employeeList = EmployeeRnW.readFile();
-        for (int i=0;i<employeeList.size();i++){
-            if (employeeList.get(i).getId().equals(id)){
+        for (int i = 0; i < employeeList.size(); i++) {
+            if (employeeList.get(i).getId().equals(id)) {
                 return employeeList.get(i);
             }
         }
@@ -55,9 +55,9 @@ public class EmployeeService implements IEmployeeService {
     @Override
     public void change(Employee employee) {
         List<Employee> employeeList = EmployeeRnW.readFile();
-        for (int i=0;i<employeeList.size();i++){
-            if (employeeList.get(i).getId().equals(employee.getId())){
-                employeeList.set(i,employee);
+        for (int i = 0; i < employeeList.size(); i++) {
+            if (employeeList.get(i).getId().equals(employee.getId())) {
+                employeeList.set(i, employee);
                 break;
             }
         }

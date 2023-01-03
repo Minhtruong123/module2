@@ -1,5 +1,7 @@
 package furama_resort.controller;
 
+import furama_resort.Regex;
+
 import java.util.Scanner;
 
 public class FuramaController {
@@ -32,27 +34,31 @@ public class FuramaController {
         FuramaController furamaController = new FuramaController();
         do {
             furamaController.displayMainMenu();
-            int choose = Integer.parseInt(sc.nextLine());
+            String choose;
+            do {
+                System.out.println("Input: ");
+                choose = sc.nextLine();
+            } while (!Regex.isNum(choose));
             switch (choose) {
-                case 1:
+                case "1":
                     EmployeeManager employeeManager = new EmployeeManager();
                     employeeManager.employeeManagerMini();
                     break;
-                case 2:
+                case "2":
                     CustomerManager customerManager = new CustomerManager();
                     customerManager.customerManagerMini();
                     break;
-                case 3:
+                case "3":
                     FacilityManager facilityManager = new FacilityManager();
                     facilityManager.facilityManagerMini();
                     break;
-                case 4:
+                case "4":
 
                     break;
-                case 5:
+                case "5":
 
                     break;
-                case 6:
+                case "6":
                     System.exit(0);
             }
         } while (true);

@@ -1,5 +1,6 @@
 package furama_resort.controller;
 
+import furama_resort.Regex;
 import furama_resort.model.person.Customer;
 import furama_resort.service.Impl.CustomerService;
 
@@ -13,33 +14,52 @@ public class CustomerManager {
                 "3.Edit customer \n" +
                 "4.Return main menu \n");
     }
-    public void customerManagerMini(){
-        Scanner sc=new Scanner(System.in);
+
+    public void customerManagerMini() {
+        Scanner sc = new Scanner(System.in);
         CustomerManager customerManager = new CustomerManager();
         CustomerService customerService = new CustomerService();
-        int choose2;
+        String choose2;
         do {
             customerManager.displayMiniMenu2();
-            choose2 = Integer.parseInt(sc.nextLine());
+            do {
+                System.out.println("Input");
+                choose2 = sc.nextLine();
+            } while (!Regex.isNum(choose2));
             switch (choose2) {
-                case 1:
+                case "1":
                     customerService.displayListCustomer();
                     break;
-                case 2:
+                case "2":
                     System.out.println("ID: ");
                     String id22 = sc.nextLine();
-                    System.out.println("Name: ");
-                    String name22 = sc.nextLine();
-                    System.out.println("Date of birth: ");
-                    String dateOfBirth22 = sc.nextLine();
-                    System.out.println("Phone number: ");
-                    String phoneNumber22 = sc.nextLine();
-                    System.out.println("Gender (Man: 1, Women: 0): ");
+                    String name22;
+                    do {
+                        System.out.println("Name: ");
+                        name22 = sc.nextLine();
+                    } while (!Regex.checkRegexNameService(name22));
+                    String dateOfBirth22;
+                    do {
+                        System.out.println("Date of birth: (dd-MM-yyyy)");
+                        dateOfBirth22 = sc.nextLine();
+                    } while (!Regex.checkDateOfBirth(dateOfBirth22));
+                    String phoneNumber22;
+                    do {
+                        System.out.println("Phone number: ");
+                        phoneNumber22 = sc.nextLine();
+                    } while (!Regex.checkPhone(phoneNumber22));
+                    System.out.println("Gender");
                     String gender22 = sc.nextLine();
-                    System.out.println("Indentity card: ");
-                    String identity22 = sc.nextLine();
-                    System.out.println("Email: ");
-                    String email22 = sc.nextLine();
+                    String identity22;
+                    do {
+                        System.out.println("Indentity card: ");
+                        identity22 = sc.nextLine();
+                    } while (!Regex.checkIDNumb(identity22));
+                    String email22;
+                    do {
+                        System.out.println("Email: ");
+                        email22 = sc.nextLine();
+                    } while (!Regex.checkEmail(email22));
                     System.out.println("Type: ");
                     String type22 = sc.nextLine();
                     System.out.println("Address: ");
@@ -47,7 +67,7 @@ public class CustomerManager {
                     Customer customer22 = new Customer(id22, name22, dateOfBirth22, phoneNumber22, gender22, identity22, email22, type22, address22);
                     customerService.add(customer22);
                     break;
-                case 3:
+                case "3":
                     System.out.println("ID of the customer you want to edit: ");
                     String id23 = sc.nextLine();
                     int choose23;
@@ -65,20 +85,29 @@ public class CustomerManager {
                         choose23 = Integer.parseInt(sc.nextLine());
                         switch (choose23) {
                             case 1:
-                                System.out.println("Input new name: ");
-                                String name23 = sc.nextLine();
+                                String name23;
+                                do {
+                                    System.out.println("Input new name: ");
+                                    name23 = sc.nextLine();
+                                } while (!Regex.checkRegexNameService(name23));
                                 customer.setName(name23);
                                 customerService.change(customer);
                                 break;
                             case 2:
-                                System.out.println("Input new date of birth: ");
-                                String dateOfBirth23 = sc.nextLine();
+                                String dateOfBirth23;
+                                do {
+                                    System.out.println("Input new date of birth: (dd-MM-yyyy)");
+                                    dateOfBirth23 = sc.nextLine();
+                                } while (!Regex.checkDateOfBirth(dateOfBirth23));
                                 customer.setdateOfBirth(dateOfBirth23);
                                 customerService.change(customer);
                                 break;
                             case 3:
-                                System.out.println("Input new phone number: ");
-                                String phoneNumber23 = sc.nextLine();
+                                String phoneNumber23;
+                                do {
+                                    System.out.println("Input new phone number: ");
+                                    phoneNumber23 = sc.nextLine();
+                                } while (!Regex.checkPhone(phoneNumber23));
                                 customer.setPhoneNumber(phoneNumber23);
                                 customerService.change(customer);
                                 break;
@@ -89,14 +118,20 @@ public class CustomerManager {
                                 customerService.change(customer);
                                 break;
                             case 5:
-                                System.out.println("Input new identity card: ");
-                                String identity23 = sc.nextLine();
+                                String identity23;
+                                do {
+                                    System.out.println("Input new identity card: ");
+                                    identity23 = sc.nextLine();
+                                } while (!Regex.checkIDNumb(identity23));
                                 customer.setIdentityCard(identity23);
                                 customerService.change(customer);
                                 break;
                             case 6:
-                                System.out.println("Input new email: ");
-                                String email23 = sc.nextLine();
+                                String email23;
+                                do {
+                                    System.out.println("Input new email: ");
+                                    email23 = sc.nextLine();
+                                } while (!Regex.checkEmail(email23));
                                 customer.setEmail(email23);
                                 customerService.change(customer);
                                 break;
@@ -118,6 +153,6 @@ public class CustomerManager {
                     }
                     break;
             }
-        } while (choose2 != 4);
+        } while (Integer.parseInt(choose2) != 4);
     }
 }

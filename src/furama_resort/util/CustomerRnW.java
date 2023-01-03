@@ -21,16 +21,7 @@ public class CustomerRnW {
             String[] arr;
             while ((line = bufferedReader.readLine()) != null) {
                 arr = line.split(",");
-                String id = arr[0];
-                String name = arr[1];
-                String dateOfBirth = arr[2];
-                String phoneNumber = arr[3];
-                String gender = arr[4];
-                String identityCard = arr[5];
-                String email = arr[6];
-                String type = arr[7];
-                String address = arr[8];
-                Customer customer = new Customer(id, name, dateOfBirth, phoneNumber, gender, identityCard, email, type, address);
+                Customer customer = new Customer(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6], arr[7], arr[8]);
                 stringList.add(customer);
             }
             bufferedReader.close();

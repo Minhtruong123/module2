@@ -22,15 +22,18 @@ public class FacilityManager {
         Scanner sc = new Scanner(System.in);
         FacilityManager facilityManager = new FacilityManager();
         IFacilityService facilityService = new FacilityService();
-        int choose3;
+        String choose3;
         do {
             facilityManager.displayMiniMenu3();
-            choose3 = Integer.parseInt(sc.nextLine());
+            do {
+                System.out.println("Input");
+                choose3 = sc.nextLine();
+            } while (!Regex.isNum(choose3));
             switch (choose3) {
-                case 1:
+                case "1":
                     facilityService.displayFacility();
                     break;
-                case 2:
+                case "2":
                     System.out.println("New room or villa (1:Room, 2:Villa)");
                     int numb32 = Integer.parseInt(sc.nextLine());
                     if (numb32 == 1) {
@@ -107,7 +110,7 @@ public class FacilityManager {
                         System.out.println("Room standard: ");
                         String roomStandard32 = sc.nextLine();
                         System.out.println("Pool area: ");
-                        String  poolArea32 = sc.nextLine();
+                        String poolArea32 = sc.nextLine();
                         System.out.println("Floors: ");
                         String floors32 = sc.nextLine();
                         String numbOfUse32;
@@ -119,10 +122,10 @@ public class FacilityManager {
                         facilityService.addVilla(villa, numbOfUse32);
                     }
                     break;
-                case 3:
+                case "3":
                     facilityService.displayFacilityMaintenace();
                     break;
             }
-        } while (choose3 != 4);
+        } while (Integer.parseInt(choose3) != 4);
     }
 }

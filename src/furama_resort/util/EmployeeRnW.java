@@ -1,6 +1,5 @@
 package furama_resort.util;
 
-import furama_resort.model.person.Customer;
 import furama_resort.model.person.Employee;
 
 import java.io.*;
@@ -22,17 +21,7 @@ public class EmployeeRnW {
             String[] arr;
             while ((line = bufferedReader.readLine()) != null) {
                 arr = line.split(",");
-                String id = arr[0];
-                String name = arr[1];
-                String dateOfBirth = arr[2];
-                String phoneNumber = arr[3];
-                String gender = arr[4];
-                String identityCard = arr[5];
-                String email = arr[6];
-                String level = arr[7];
-                String position = arr[8];
-                String salary = arr[9];
-                Employee employee = new Employee(id, name, dateOfBirth, phoneNumber, gender, identityCard, email, level, position, salary);
+                Employee employee = new Employee(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6], arr[7], arr[8], arr[9]);
                 employeeList.add(employee);
             }
             bufferedReader.close();
