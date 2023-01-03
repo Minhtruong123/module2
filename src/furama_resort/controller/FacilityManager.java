@@ -41,31 +41,49 @@ public class FacilityManager {
                         do {
                             System.out.println("Input ID");
                             id32 = sc.nextLine();
+                            if (!Regex.checkRegexIDRoom(id32)){
+                                System.err.println("Not wrong format. Input again");
+                            }
                         } while (!Regex.checkRegexIDRoom(id32));
                         String nameService32;
                         do {
                             System.out.println("New name service: ");
                             nameService32 = sc.nextLine();
+                            if (!Regex.checkRegexNameService(nameService32)){
+                                System.err.println("Wrong name. Input again");
+                            }
                         } while (!Regex.checkRegexNameService(nameService32));
                         String usableAre32;
                         do {
-                            System.out.println("Usable are: ");
+                            System.out.println("Usable are: (>30)");
                             usableAre32 = sc.nextLine();
+                            if (!Regex.checkRegexRegexArea(usableAre32)){
+                                System.err.println("Wrong number. Input again");
+                            }
                         } while (!Regex.checkRegexRegexArea(usableAre32));
                         String rentalCost32;
                         do {
                             System.out.println("Rental costs");
                             rentalCost32 = sc.nextLine();
+                            if (!Regex.checkRegexRentalCost(rentalCost32)){
+                                System.err.println("Wrong number. Input again");
+                            }
                         } while (!Regex.checkRegexRentalCost(rentalCost32));
                         String maxNumbOfPeople32;
                         do {
                             System.out.println("Max number of people: ");
                             maxNumbOfPeople32 = sc.nextLine();
+                            if (!Regex.checkRegexMaxPeople(maxNumbOfPeople32)){
+                                System.err.println("Wrong number. Input again");
+                            }
                         } while (!Regex.checkRegexMaxPeople(maxNumbOfPeople32));
                         String rentalType;
                         do {
                             System.out.println("Rental type");
                             rentalType = sc.nextLine();
+                            if (!Regex.checkRegexRetalType(rentalType)){
+                                System.err.println("Wrong type. Input again");
+                            }
                         } while (!Regex.checkRegexRetalType(rentalType));
                         System.out.println("Free service: ");
                         String freeService32 = sc.nextLine();
@@ -73,6 +91,9 @@ public class FacilityManager {
                         do {
                             System.out.println("Number of uses: ");
                             numbOfUse32 = sc.nextLine();
+                            if (!Regex.checkRegexNumbOfUse(numbOfUse32)){
+                                System.err.println("Wrong number. Input again");
+                            }
                         } while (!Regex.checkRegexNumbOfUse(numbOfUse32));
                         Facility room = new Room(id32, nameService32, usableAre32, rentalCost32, maxNumbOfPeople32, rentalType, freeService32);
                         facilityService.addRoom(room, numbOfUse32);
@@ -81,31 +102,49 @@ public class FacilityManager {
                         do {
                             System.out.println("Input ID");
                             id32 = sc.nextLine();
+                            if (!Regex.checkRegexIDVIlla(id32)){
+                                System.err.println("Wrong format. Input again");
+                            }
                         } while (!Regex.checkRegexIDVIlla(id32));
                         String nameService32;
                         do {
                             System.out.println("New name service: ");
                             nameService32 = sc.nextLine();
+                            if (!Regex.checkRegexNameService(nameService32)){
+                                System.err.println("Wrong name. Input again");
+                            }
                         } while (!Regex.checkRegexNameService(nameService32));
                         String usableAre32;
                         do {
                             System.out.println("Usable are: ");
                             usableAre32 = sc.nextLine();
+                            if (!Regex.checkRegexRegexArea(usableAre32)){
+                                System.err.println("Wrong number. Input again");
+                            }
                         } while (!Regex.checkRegexRegexArea(usableAre32));
                         String rentalCost32;
                         do {
                             System.out.println("Rental costs");
                             rentalCost32 = sc.nextLine();
+                            if (!Regex.checkRegexRentalCost(rentalCost32)){
+                                System.err.println("Wrong number. Input again");
+                            }
                         } while (!Regex.checkRegexRentalCost(rentalCost32));
                         String maxNumbOfPeople32;
                         do {
                             System.out.println("Max number of people: ");
                             maxNumbOfPeople32 = sc.nextLine();
+                            if (!Regex.checkRegexMaxPeople(maxNumbOfPeople32)){
+                                System.err.println("Wrong number. Input again");
+                            }
                         } while (!Regex.checkRegexMaxPeople(maxNumbOfPeople32));
                         String rentalType;
                         do {
                             System.out.println("Rental type");
                             rentalType = sc.nextLine();
+                            if (!Regex.checkRegexRetalType(rentalType)){
+                                System.err.println("Wrong type. Input again");
+                            }
                         } while (!Regex.checkRegexRetalType(rentalType));
                         System.out.println("Room standard: ");
                         String roomStandard32 = sc.nextLine();
@@ -117,6 +156,9 @@ public class FacilityManager {
                         do {
                             System.out.println("Number of uses: ");
                             numbOfUse32 = sc.nextLine();
+                            if (!Regex.checkRegexNumbOfUse(numbOfUse32)){
+                                System.err.println("Wrong number. Input again");
+                            }
                         } while (!Regex.checkRegexNumbOfUse(numbOfUse32));
                         Villa villa = new Villa(id32, nameService32, usableAre32, rentalCost32, maxNumbOfPeople32, rentalType, roomStandard32, poolArea32, floors32);
                         facilityService.addVilla(villa, numbOfUse32);

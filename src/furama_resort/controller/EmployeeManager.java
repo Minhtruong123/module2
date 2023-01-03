@@ -26,6 +26,9 @@ public class EmployeeManager {
             do {
                 System.out.println("Input");
                 choose1 = sc.nextLine();
+                if (!Regex.isNum(choose1)){
+                    System.err.println("Not a number. Input again");
+                }
             } while (!Regex.isNum(choose1));
             switch (choose1) {
                 case "1":
@@ -38,16 +41,25 @@ public class EmployeeManager {
                     do {
                         System.out.println("Name of the new employee: ");
                         name12 = sc.nextLine();
+                        if (!Regex.checkRegexNameService(name12)){
+                            System.err.println("Wrong name. Input again");
+                        }
                     } while (!Regex.checkRegexNameService(name12));
                     String dateOfBirth12;
                     do {
                         System.out.println("Date of birth: (dd-MM-yyyy)");
                         dateOfBirth12 = sc.nextLine();
+                        if (!Regex.checkDateOfBirth(dateOfBirth12)){
+                            System.err.println("Wrong format. Input again");
+                        }
                     } while (!Regex.checkDateOfBirth(dateOfBirth12));
                     String phoneNumber12;
                     do {
                         System.out.println("Phone number: ");
                         phoneNumber12 = sc.nextLine();
+                        if (!Regex.checkPhone(phoneNumber12)){
+                            System.err.println("Wrong phone number. Input again");
+                        }
                     } while (!Regex.checkPhone(phoneNumber12));
                     System.out.println("Gender");
                     String gender12 = sc.nextLine();
@@ -55,11 +67,17 @@ public class EmployeeManager {
                     do {
                         System.out.println("Identity card: ");
                         identity12 = sc.nextLine();
+                        if (!Regex.checkIDNumb(identity12)){
+                            System.err.println("Wrong number. Input again");
+                        }
                     } while (!Regex.checkIDNumb(identity12));
                     String email12;
                     do {
-                        System.out.println("Email: ");
+                        System.out.println("Email: (abc@gmail.com)");
                         email12 = sc.nextLine();
+                        if (!Regex.checkEmail(email12)){
+                            System.err.println("Wrong email form. Input again");
+                        }
                     } while (!Regex.checkEmail(email12));
                     System.out.println("Level: ");
                     String level12 = sc.nextLine();
@@ -98,6 +116,9 @@ public class EmployeeManager {
                         do {
                             System.out.println("Input");
                             choose14 = sc.nextLine();
+                            if (!Regex.isNum(choose14)){
+                                System.err.println("Not a number. Input again");
+                            }
                         } while (!Regex.isNum(choose14));
                         switch (choose14) {
                             case "1":
@@ -105,6 +126,9 @@ public class EmployeeManager {
                                 do {
                                     System.out.println("New name: ");
                                     name14 = sc.nextLine();
+                                    if (!Regex.checkRegexNameService(name14)){
+                                        System.err.println("Wrong name. Input again");
+                                    }
                                 } while (!Regex.checkRegexNameService(name14));
                                 e.setName(name14);
                                 employeeService.change(e);
@@ -114,6 +138,9 @@ public class EmployeeManager {
                                 do {
                                     System.out.println("New date of birth: (dd-MM-yyyy)");
                                     dateOfBirth14 = sc.nextLine();
+                                    if (!Regex.checkDateOfBirth(dateOfBirth14)){
+                                        System.err.println("Wrong form. Input again");
+                                    }
                                 } while (!Regex.checkDateOfBirth(dateOfBirth14));
                                 e.setdateOfBirth(dateOfBirth14);
                                 employeeService.change(e);
@@ -123,6 +150,9 @@ public class EmployeeManager {
                                 do {
                                     System.out.println("New phone number: ");
                                     phoneNumber14 = sc.nextLine();
+                                    if (!Regex.checkPhone(phoneNumber14)){
+                                        System.err.println("Wrong phone number. Input again");
+                                    }
                                 } while (!Regex.checkPhone(phoneNumber14));
                                 e.setPhoneNumber(phoneNumber14);
                                 employeeService.change(e);
@@ -138,14 +168,20 @@ public class EmployeeManager {
                                 do {
                                     System.out.println("New identity card: ");
                                     identity14 = sc.nextLine();
+                                    if (!Regex.checkIDNumb(identity14)){
+                                        System.err.println("Wrong number. Input again");
+                                    }
                                 } while (!Regex.checkIDNumb(identity14));
                                 e.setIdentityCard(identity14);
                                 break;
                             case "6":
                                 String email14;
                                 do {
-                                    System.out.println("New email: ");
+                                    System.out.println("New email: (abc@gmail.com)");
                                     email14 = sc.nextLine();
+                                    if (!Regex.checkEmail(email14)){
+                                        System.err.println("Wrong email format. Input again");
+                                    }
                                 } while (!Regex.checkEmail(email14));
                                 e.setEmail(email14);
                                 employeeService.change(e);

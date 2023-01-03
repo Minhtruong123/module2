@@ -22,8 +22,8 @@ public class VillaRnW {
             String[] arr;
             while ((line = bufferedReader.readLine()) != null) {
                 arr = line.split(",");
-                Facility villa = new Villa(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6],arr[7],arr[8]);
-                facilityList.put(villa,Integer.parseInt(arr[9]));
+                Facility villa = new Villa(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6], arr[7], arr[8]);
+                facilityList.put(villa, Integer.parseInt(arr[9]));
             }
             bufferedReader.close();
         } catch (IOException e) {
@@ -34,10 +34,10 @@ public class VillaRnW {
 
     public static void writeFile(Map<Facility, Integer> listMap) {
         try {
-            FileWriter writer = new FileWriter(FILE_PATH);
+            FileWriter writer = new FileWriter(FILE_PATH,true);
             BufferedWriter bufferedWriter = new BufferedWriter(writer);
             for (Facility villa : listMap.keySet()) {
-                bufferedWriter.write(villa + "," + listMap.get(villa));
+                bufferedWriter.write(villa.toString1() + "," + listMap.get(villa));
                 bufferedWriter.newLine();
             }
             bufferedWriter.close();

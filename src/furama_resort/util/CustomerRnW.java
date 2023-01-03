@@ -33,13 +33,14 @@ public class CustomerRnW {
 
     public static void writeFile(List<Customer> list) {
         try {
-            FileWriter writer = new FileWriter(FILE_PATH);
+            FileWriter writer = new FileWriter(FILE_PATH,true);
             BufferedWriter bufferedWriter = new BufferedWriter(writer);
             for (Customer customer : list) {
                 bufferedWriter.write(customer.getId() + "," + customer.getName() + "," + customer.getdateOfBirth() + "," +
                         customer.getPhoneNumber() + "," + customer.isGender() + "," + customer.getIdentityCard() + "," +
                         customer.getEmail() + "," + customer.getType() + "," + customer.getAddress());
             }
+            bufferedWriter.newLine();
             bufferedWriter.close();
         } catch (Exception e) {
             e.printStackTrace();

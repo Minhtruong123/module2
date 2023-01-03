@@ -11,18 +11,6 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class FacilityService implements IFacilityService {
-    public static Map<Facility, Integer> mapRoom = new LinkedHashMap<>();
-    public static Map<Facility, Integer> mapVilla = new LinkedHashMap<>();
-
-    static {
-        mapRoom.put(new Room("SVRO-1234", "Room", "30", "1000", "10", "Day", "Landry"), 1);
-        mapRoom.put(new Room("SVRO-1324", "Room", "35", "2000", "8", "Week", "Landry"), 6);
-        mapVilla.put(new Villa("SVVL-1234", "Villa", "39", "4000", "10", "Day", "Diamond", "30", "3"), 2);
-        mapVilla.put(new Villa("SVVL-1324", "Villa", "36", "3000", "10", "Day", "Diamond", "50", "4"), 5);
-        RoomRnW.writeFile(mapRoom);
-        VillaRnW.writeFile(mapVilla);
-    }
-
     public void displayFacility() {
         Map<Facility, Integer> mapRoom1 = RoomRnW.readFile();
         Map<Facility, Integer> mapVilla1 = VillaRnW.readFile();
@@ -52,14 +40,16 @@ public class FacilityService implements IFacilityService {
     }
 
     public void addRoom(Facility room, String numb) {
-        Map<Facility, Integer> mapRoom1 = RoomRnW.readFile();
+        Map<Facility, Integer> mapRoom1 = new LinkedHashMap<>();
         mapRoom1.put(room, Integer.valueOf(numb));
         RoomRnW.writeFile(mapRoom1);
+        mapRoom1.clear();
     }
 
     public void addVilla(Villa villa, String numb) {
-        Map<Facility, Integer> mapVilla1 = VillaRnW.readFile();
+        Map<Facility, Integer> mapVilla1 = new LinkedHashMap<>();
         mapVilla1.put(villa, Integer.valueOf(numb));
         VillaRnW.writeFile(mapVilla1);
+        mapVilla1.clear();
     }
 }

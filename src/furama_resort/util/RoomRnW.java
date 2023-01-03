@@ -33,10 +33,10 @@ public class RoomRnW {
 
     public static void writeFile(Map<Facility, Integer> listMap) {
         try {
-            FileWriter writer = new FileWriter(FILE_PATH);
+            FileWriter writer = new FileWriter(FILE_PATH,true);
             BufferedWriter bufferedWriter = new BufferedWriter(writer);
             for (Facility room : listMap.keySet()) {
-                bufferedWriter.write(room + "," + listMap.get(room));
+                bufferedWriter.write(room.toString1() + "," + listMap.get(room));
                 bufferedWriter.newLine();
             }
             bufferedWriter.close();

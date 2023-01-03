@@ -45,11 +45,19 @@ public class Villa extends Facility {
         this.floors = floors;
     }
 
-    @Override
-    public String toString() {
-        return super.toString() +
+    public String toString1() {
+        return super.toString1() +
                 "," + roomStandard +
                 "," + poolArea +
                 "," + floors;
+    }
+
+    @Override
+    public String toString() {
+        return "Villa{" +
+                "roomStandard='" + roomStandard + '\'' +
+                ", poolArea='" + poolArea + '\'' +
+                ", floors='" + floors + '\'' +
+                "} " + super.toString();
     }
 }

@@ -38,6 +38,9 @@ public class FuramaController {
             do {
                 System.out.println("Input: ");
                 choose = sc.nextLine();
+                if (!Regex.isNum(choose)){
+                    System.err.println("Wrong format.Input again");
+                }
             } while (!Regex.isNum(choose));
             switch (choose) {
                 case "1":

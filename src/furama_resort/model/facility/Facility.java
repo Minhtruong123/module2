@@ -68,13 +68,24 @@ public abstract class Facility {
         this.retalType = retalType;
     }
 
-    @Override
-    public String toString() {
+    public String toString1() {
         return  id +
                 "," + serviceName  +
                 "," + usableArea +
                 "," + rentalCosts +
                 "," + maxNumOfPeople +
                 "," + retalType ;
+    }
+
+    @Override
+    public String toString() {
+        return "Facility{" +
+                "id='" + id + '\'' +
+                ", serviceName='" + serviceName + '\'' +
+                ", usableArea='" + usableArea + '\'' +
+                ", rentalCosts='" + rentalCosts + '\'' +
+                ", maxNumOfPeople='" + maxNumOfPeople + '\'' +
+                ", retalType='" + retalType + '\'' +
+                '}';
     }
 }
